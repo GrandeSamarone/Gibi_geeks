@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group
+        android:id="@+id/menutop">
+        <item android:id="@+id/inicio_menu"
+            android:title="Inicio"
+            android:icon="@drawable/ic_24dp"/>
+
+        <item android:id="@+id/meuanuncio_menu"
+            android:title="Meus anuncios"
+            android:icon="@drawable/ic_24dp"/>
+
+        <item android:id="@+id/inserir_anuncio_menu"
+            android:title="Inserir Anuncio"
+            android:icon="@drawable/ic_24dp"/>
+
+        <item android:id="@+id/upgrade_menu"
+            android:title="Upgrade"
+            android:icon="@drawable/ic_24dp"/>
+
+        <item android:id="@+id/minha_conta_menu"
+            android:title="Minha conta"
+            android:icon="@drawable/ic_24dp"/>
+    </group>
+    <group
+        android:id="@+id/menu_bottom"
+        android:checkableBehavior="single">
+        <menu>
+            <item android:id="@+id/compartilhar_menu"
+                android:title="Upgrade"
+                android:icon="@drawable/ic_24dp"/>
+        </menu>
+        <item android:id="@+id/minha_conta_dmenu"
+            android:title="Minha conta"
+            android:icon="@drawable/ic_24dp"/>
+
+    </group>
+</menu>

@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Gibi_geeks</string>
+    <string name="title_activity_autenticacao">entra</string>
+    <string name="open">OPEN</string>
+    <string name="close">CLOSE</string>
+    <string name="title_activity_cad_nick_foto_">Cad_nick_foto_Activity</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_page_add_icon">PageAddIcon</string>
+    <string name="title_activity_soprateste">Soprateste</string>
+</resources>

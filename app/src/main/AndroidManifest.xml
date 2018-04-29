@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.fulanoeciclano.gibi_geeks">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".Paginas.MainActivity" />
+        <activity
+            android:name=".Autenticacao.Autenticacao"
+            android:label="@string/title_activity_autenticacao"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Pag_nick_foto.Cad_nick_foto_Activity"
+            android:label="@string/title_activity_cad_nick_foto_"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".IconsPage.PageAddIcon"
+            android:label="@string/title_activity_page_add_icon"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Paginas.Soprateste"
+            android:label="@string/title_activity_soprateste"
+            android:theme="@style/AppTheme"></activity>
+    </application>
+
+</manifest>

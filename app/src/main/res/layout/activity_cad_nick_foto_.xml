@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    tools:context="com.example.fulanoeciclano.gibi_geeks.Pag_nick_foto.Cad_nick_foto_Activity">
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/NIck_Icone_perfil"
+        android:src="@android:drawable/ic_menu_camera"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="18dp"
+        android:layout_gravity="center"
+         />
+<TextView
+    android:id="@+id/kk"
+    android:layout_marginTop="30dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Digite um Nick"/>
+
+    <EditText
+        android:id="@+id/Edit_Nick_perfil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nick"/>
+
+
+    <Button
+        android:id="@+id/botaocadastrar"
+        android:layout_marginTop="60dp"
+        android:layout_width="140dp"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:text="Continuar " />
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="O nick e a foto cadastrada será mostrado quando vc estiver online,
+as informacoes como email e senha pessoal nao sera exibido"
+        android:textStyle="bold"
+        android:textAlignment="center"/>
+
+
+
+
+
+
+</LinearLayout>
