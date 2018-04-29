@@ -9,4 +9,30 @@ private String nome;
 private String Url;
 private String TipoUsuario;
 
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getUrl() {
+        return Url;
+    }
+
+    public void setUrl(String url) {
+        Url = url;
+    }
+
+    public String getTipoUsuario() {
+        return TipoUsuario;
+    }
+
+    public void setTipoUsuario(String tipoUsuario) {
+        TipoUsuario = tipoUsuario;
+    }
+
+
+
 }

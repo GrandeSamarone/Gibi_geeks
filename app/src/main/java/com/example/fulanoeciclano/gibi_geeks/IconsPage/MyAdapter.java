@@ -14,7 +14,7 @@ import com.example.fulanoeciclano.gibi_geeks.R;
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.facebook.drawee.interfaces.DraweeController;
 
-import java.util.List;
+import java.util.ArrayList;
 
 /**
  * Created by fulanoeciclano on 21/04/2018.
@@ -25,10 +25,10 @@ View v;
     Context c;
     private CardView card;
     private String imagePath;
-    List<Icones> icones;
+    ArrayList<Icones> icones;
 
 
-    public MyAdapter(Context c, List<Icones> icones) {
+    public MyAdapter(Context c,  ArrayList<Icones> icones) {
         this.c = c;
         this.icones = icones;
 

@@ -13,6 +13,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.fulanoeciclano.DAO.ConfiguracaoFirebase;
+import com.example.fulanoeciclano.gibi_geeks.Classes.UsuarioNick;
 import com.example.fulanoeciclano.gibi_geeks.IconsPage.PageAddIcon;
 import com.example.fulanoeciclano.gibi_geeks.R;
 import com.facebook.drawee.backends.pipeline.Fresco;
@@ -25,19 +27,19 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class Cad_nick_foto_Activity extends AppCompatActivity  {
     final static String DB_URL="https://geeksgibi.firebaseio.com/";
-    private static final String TAG = "NewPostActivity";
-    private static final String REQUIRED = "Required";
-    private DatabaseReference mDatabase;
+    private FirebaseDatabase database;
+    private DatabaseReference reference;
+    private UsuarioNick usuarioNick;
     private CircleImageView imageNick;
     private ImageView imageView;
     private Button botaocadastrar;
-    private EditText add_nick_perfil;
+    private EditText edit_nick_perfil;
     private  String urlfoto;
     private Uri selectedImage;
     private AlertDialog alerta;
     public static final int PICK_IMG = 1234;
 
-    private Intent data;
+
 
 
     @Override
@@ -46,13 +48,26 @@ public class Cad_nick_foto_Activity extends AppCompatActivity  {
         Fresco.initialize(this);
         setContentView(R.layout.activity_cad_nick_foto_);
 
-        mDatabase = FirebaseDatabase.getInstance().getReference();
 
-        add_nick_perfil = findViewById(R.id.Edit_Nick_perfil);
+
+        edit_nick_perfil = findViewById(R.id.Edit_Nick_perfil);
         imageNick = findViewById(R.id.NIck_Icone_perfil);
 
         botaocadastrar=findViewById(R.id.botaocadastrar);
+       botaocadastrar.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               if(!edit_nick_perfil.getText().toString().equals("")){
+                    usuarioNick=new UsuarioNick();
+                    usuarioNick.setNome(edit_nick_perfil.getText().toString());
+                    usuarioNick.setUrl("https://firebasestorage.googleapis.com/v0/b/geeksgibi.appspot.com/o/iconegibi%2Fvaderstar." +
+                            "png?alt=media&token=d9a6975f-8ff4-4783-b1c5-4f59f46fb93f");
+                    usuarioNick.setTipoUsuario("usuario");
 
+                    InserirUsuario(usuarioNick);
+               }
+           }
+       });
 
 
         //recebendo dados da pagina de icone
@@ -85,7 +100,18 @@ public class Cad_nick_foto_Activity extends AppCompatActivity  {
 
     }
 
-
+private boolean InserirUsuario(UsuarioNick usuarioNick){
+        try{
+            reference = ConfiguracaoFirebase.getFirebase().child("usuarios");
+            reference.push().setValue(usuarioNick);
+            Toast.makeText(this, "Usuario cadastrado com sucesso!", Toast.LENGTH_SHORT).show();
+            return true;
+        }catch (Exception e){
+            Toast.makeText(this, "Erro ao gravar o usuario", Toast.LENGTH_LONG).show();
+            e.printStackTrace();
+            return false;
+        }
+}
 
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
